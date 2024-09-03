@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+
+{% block content %}
+
+
+    <h1>Generate Your Receipt</h1>
+
+    <form method="POST" action="{% url 'home' %}">
+        {% csrf_token %}
+        <div class="mb-3">
+          <input type="text" class="form-control" placeholder="First Name" name="fname">
+        </div>
+        <div class="mb-3">
+          <input type="text" class="form-control" placeholder="Last Name" name="lname">
+        </div>
+        <div class="mb-3">
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email Address" name="email">
+          </div>
+        <div class="mb-3">
+          <input type="text" class="form-control" placeholder="Serial Number" name="serialnumber">
+        </div>
+        <div class="mb-3">
+          <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Address" name="address">
+        </div>
+        <div class="mb-3">
+          <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Model of Laptop" name="pcmodel">
+        </div>
+        <div class="mb-3">
+          <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Processor" name="processor">
+        </div>
+        <div class="mb-3">
+          <input type="text" class="form-control" id="exampleInputPassword1" placeholder="RAM" name="ram">
+        </div>
+        <div class="mb-3">
+          <input type="text" class="form-control" id="exampleInputPassword1" placeholder="ROM" name="rom">
+        </div>
+        <div class="mb-3">
+          <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Amount" name="amount">
+        </div>
+        <div class="mb-3">
+          <input type="date" class="form-control" id="exampleInputPassword1" placeholder="Date" name="date">
+        </div>
+
+        <button type="submit" class="btn btn-secondary">Generate Receipt</button>
+      </form>
+{% endblock %}
